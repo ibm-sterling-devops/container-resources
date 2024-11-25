@@ -1,0 +1,27 @@
+# Use the UBI9 minimal image as the base
+FROM registry.access.redhat.com/ubi9/ubi-minimal
+
+# Set environment variables
+ENV RESOURCES_SRC_DIR=/ibm/pem/resources \
+    RESOURCES_DIR_MOUNT=/ibm/resources \
+    DB_VENDOR=DB2 \
+    HOME=/ibm/pem/resources \
+    TEMP=/tmp
+
+# Create necessary directories
+RUN mkdir -p $RESOURCES_DIR_MOUNT $RESOURCES_SRC_DIR
+
+# Define a volume for persistent storage
+VOLUME $RESOURCES_DIR_MOUNT
+
+# Set the working directory
+WORKDIR $RESOURCES_SRC_DIR
+
+# Copy files from the local directory to the container's resources directory
+COPY ./files $RESOURCES_SRC_DIR/
+
+# Ensure ResourcesCopy.sh is executable after copying
+RUN chmod +x ResourcesCopy.sh
+
+# Set the entry point to run the script
+CMD ["./ResourcesCopy.sh"]
