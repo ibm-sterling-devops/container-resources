@@ -8,8 +8,10 @@ ENV RESOURCES_SRC_DIR=/ibm/b2bi/resources \
     HOME=/ibm/b2bi/resources \
     TEMP=/tmp
 
-# Create necessary directories
-RUN mkdir -p $RESOURCES_DIR_MOUNT $RESOURCES_SRC_DIR
+# Create a group and user with UID 1011 and Create necessary directories
+RUN groupadd -g 1010 b2bi && \
+    useradd -m -u 1010 -g b2bi b2bi && \
+    mkdir -p $RESOURCES_DIR_MOUNT $RESOURCES_SRC_DIR
 
 # Define a volume for persistent storage
 VOLUME $RESOURCES_DIR_MOUNT
@@ -21,7 +23,10 @@ WORKDIR $RESOURCES_SRC_DIR
 COPY ./files $RESOURCES_SRC_DIR/
 
 # Ensure ResourcesCopy.sh is executable after copying
-RUN chmod +x ResourcesCopy.sh
+RUN chmod 755 ResourcesCopy.sh
+
+# Switch to the custom user
+USER b2bi
 
 # Set the entry point to run the script
 CMD ["./ResourcesCopy.sh"]
