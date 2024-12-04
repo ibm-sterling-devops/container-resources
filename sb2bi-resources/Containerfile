@@ -29,4 +29,4 @@ RUN chmod 755 ResourcesCopy.sh
 USER b2bi
 
 # Set the entry point to run the script
-CMD ["./ResourcesCopy.sh"]
+CMD ["./ResourcesCopy.sh && tail -f /dev/null"]
