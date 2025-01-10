@@ -1,0 +1,16 @@
+FROM <release image>
+USER root
+ARG customUser=
+ARG customUserId=
+ARG customGroup=
+ARG customGroupId=
+
+RUN groupadd -g ${customGroupId} ${customGroup}
+RUN useradd -u ${customUserId} -r -g ${customGroup} -m -d /${customUser} -s /sbin/nologin -c "PEM custom user" ${customUser}
+RUN chmod 750 /${customUser}
+RUN chown -f -R ${customUser}:${customGroup} /opt/IBM/ && chmod -R 755 /opt/IBM/
+RUN echo "%$customGroup ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+USER ${customUser}
+
+CMD ["/bin/bash", "/opt/IBM/runContainer.sh"]
