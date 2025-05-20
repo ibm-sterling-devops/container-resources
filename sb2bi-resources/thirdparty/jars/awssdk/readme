@@ -1,1 +1,31 @@
-Download AWS SDK for Java from this location https://sdk-for-java.amazonwebservices.com/latest/aws-java-sdk.zip and unzip file.
+1) Download AWS SDK for Java from this location https://sdk-for-java.amazonwebservices.com/latest/aws-java-sdk.zip and unzip file.
+
+2) Go to aws-java-sdk[version]/lib and copy aws-java-sdk-[version].jar file to the directory.
+
+3) Go to aws-java-sdk[version]/third-party/lib and copy these jar files to the directory.
+
+httpclient-[version].jar
+httpcore-[version].jar
+jackson-annotations-[version].jar
+jackson-core-[version].jar
+jackson-databind-[version].jar
+joda-time-[version].jar
+netty-*.jar
+
+Sample Directory
+
+./awssdk/1.12.783/aws-java-sdk-1.12.783.jar
+./awssdk/1.12.783/httpclient-4.5.13.jar
+./awssdk/1.12.783/httpcore-4.4.13.jar
+./awssdk/1.12.783/jackson-annotations-2.17.2.jar
+./awssdk/1.12.783/jackson-core-2.17.2.jar
+./awssdk/1.12.783/jackson-databind-2.17.2.jar
+./awssdk/1.12.783/joda-time-2.12.7.jar
+./awssdk/1.12.783/netty-buffer-4.1.118.Final.jar
+./awssdk/1.12.783/netty-codec-4.1.118.Final.jar
+./awssdk/1.12.783/netty-codec-http-4.1.118.Final.jar
+./awssdk/1.12.783/netty-common-4.1.118.Final.jar
+./awssdk/1.12.783/netty-handler-4.1.118.Final.jar
+./awssdk/1.12.783/netty-resolver-4.1.118.Final.jar
+./awssdk/1.12.783/netty-transport-4.1.118.Final.jar
+./awssdk/1.12.783/netty-transport-native-unix-common-4.1.118.Final.jar
