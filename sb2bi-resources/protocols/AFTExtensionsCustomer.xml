@@ -1,31 +1,18 @@
 <AFTExtensions>
-
-<!-- Custom File System Adapter Protocol-->
-<AFTExtension name="fsa-protocol" type="consumer-delivery-protocol"
-      label="fsa.protocol.label.protocol" bp="Custom_BP_RouteViaFileSystem">
-
-  <GROUP title="fsa.instance.group1.title">
-    <VARDEF varname="fsa_RemoteFileSystem" type="String" htmlType="text"
-        validator="ALPHANUMERIC" size="50" maxsize="250" label="fsa.label.protocol.remotefilesystem" required="yes"/>
-  </GROUP>
-</AFTExtension>
-   
-<!-- Custom Kafka Protocol-->
-<AFTExtension name="customkafka" type="consumer-delivery-protocol" label="customkafka.protocol.label.protocol" bp="Custom_BP_RouteViaKafka">
-
-  <GROUP title="customkafka.instance.group1.title">
-    <VARDEF varname="customkafka_BootStrapServers" type="String" htmlType="text" validator="ALPHANUMERIC" size="30"
-      maxsize="250" label="customkafka.label.protocol.BootStrapServers" required="yes" />
-    <VARDEF varname="customkafka_KafkaClientAdapter" type="String" htmlType="text" validator="ALPHANUMERIC" size="30"
-      maxsize="250" label="customkafka.label.protocol.KafkaClientAdapter" required="yes"
-      defaultVal="KafkaClientAdapter" />
-    <VARDEF varname="customkafka_SecurityAction" type="String" htmlType="text" validator="ALPHANUMERIC" size="30"
-      maxsize="250" label="customkafka.label.protocol.SecurityAction" required="yes" />
-    <VARDEF varname="customkafka_Topic" type="String" htmlType="text" validator="ALPHANUMERIC" size="30"
-      maxsize="250" label="customkafka.label.protocol.Topic" required="yes" />
-    <VARDEF varname="customkafka_ProducerConfig" type="String" htmlType="text" validator="ALPHANUMERIC" size="30"
-      maxsize="250" label="customkafka.label.protocol.ProducerConfig" required="no" />
-  </GROUP>
-</AFTExtension>
-
+  <!-- Custom File System Adapter Protocol-->
+  <AFTExtension name="fsa-protocol" type="consumer-delivery-protocol" label="fsa.protocol.label.protocol" bp="Custom_BP_RouteViaFileSystem">
+    <GROUP title="fsa.instance.group1.title">
+      <VARDEF varname="fsa_RemoteFileSystem" type="String" htmlType="text" validator="ALPHANUMERIC" size="50" maxsize="250" label="fsa.label.protocol.remotefilesystem" required="yes"/>
+    </GROUP>
+  </AFTExtension>
+  <!-- Custom Kafka Protocol-->
+  <AFTExtension name="customkafka" type="consumer-delivery-protocol" label="customkafka.protocol.label.protocol" bp="Custom_BP_RouteViaKafka">
+    <GROUP title="customkafka.instance.group1.title">
+      <VARDEF varname="customkafka_BootStrapServers" type="String" htmlType="text" validator="ALPHANUMERIC" size="30" maxsize="250" label="customkafka.label.protocol.BootStrapServers" required="yes" />
+      <VARDEF varname="customkafka_KafkaClientAdapter" type="String" htmlType="text" validator="ALPHANUMERIC" size="30" maxsize="250" label="customkafka.label.protocol.KafkaClientAdapter" required="yes" defaultVal="KafkaClientAdapter" />
+      <VARDEF varname="customkafka_SecurityAction" type="String" htmlType="text" validator="ALPHANUMERIC" size="30" maxsize="250" label="customkafka.label.protocol.SecurityAction" required="yes" />
+      <VARDEF varname="customkafka_Topic" type="String" htmlType="text" validator="ALPHANUMERIC" size="30" maxsize="250" label="customkafka.label.protocol.Topic" required="yes" />
+      <VARDEF varname="customkafka_ProducerConfig" type="String" htmlType="text" validator="ALPHANUMERIC" size="30" maxsize="250" label="customkafka.label.protocol.ProducerConfig" required="no" />
+    </GROUP>
+  </AFTExtension>
 </AFTExtensions>
