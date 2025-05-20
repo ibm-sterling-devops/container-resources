@@ -1,4 +1,4 @@
-<process name="Demo_BP_RouteViaKafka">
+<process name="Custom_BP_RouteViaKafka">
 	<sequence>
 		<operation name="Kafka Client Begin Session Service">
 			<participant name='KafkaBeginSessionService'/>

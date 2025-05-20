@@ -11,7 +11,7 @@
 </AFTExtension>
    
 <!-- Custom Kafka Protocol-->
-<AFTExtension name="customkafka" type="consumer-delivery-protocol" label="customkafka.protocol.label.protocol" bp="Demo_BP_RouteViaKafka">
+<AFTExtension name="customkafka" type="consumer-delivery-protocol" label="customkafka.protocol.label.protocol" bp="Custom_BP_RouteViaKafka">
 
   <GROUP title="customkafka.instance.group1.title">
     <VARDEF varname="customkafka_BootStrapServers" type="String" htmlType="text" validator="ALPHANUMERIC" size="30"
