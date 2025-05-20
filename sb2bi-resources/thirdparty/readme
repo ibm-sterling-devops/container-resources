@@ -1,0 +1,58 @@
+Custom Thirdparty Libraries
+
+The customization init image can be used to configure custom thirdparty libraries including jars,
+database driver jars, properties and shared or native libraries . The out of the box customization init
+image defines the below structure for custom thirdparty libraries with placeholder folders for each
+thirdparty type along with placeholder files for pre-dynamicclasspath.cfg.in and pre-dynamicclasspathAC.cfg
+which can then be updated by extending the image
+
+ibm
+ b2bi
+  customization
+   thirdparty
+    jars
+    dbjars
+    properties
+    shared
+    pre-dynamicclasspath.cfg.in
+    pre-dynamicclasspathAC.cfg
+
+All custom thirdparty jars, dbjars, properties or shared libraries that are to be applied to the product
+are required to be placed in the above structure as per the third party type. Also each thirdparty file
+needs to be enclosed in its vendor name and version sub folders so that the appropriate vendor
+name and version could be added to its path in dynamic classpath. All files not placed under the
+appropriate structure including the vendor name and version sub folders will be ignored while adding
+dynamic classpath entries. The pre-dynamicclasspath.cfg.in, applicable for asi containers, and
+pre-dynamiclasspathAC.cfg, applicable for ac containers, can be used to place any thirdparty jars, dbjars
+properties at the top of the application dynamic classpath in case there of any conflicts with the product
+libraries.
+
+Here are few examples below to demonstrate how the binaries or property files are to be placed under vendor
+name and version folders inside the respective thirdparty type folders. For example, the seas-sso.jar needs
+to be placed under the thirdparty/jars/seas-sso/1.0 folder structure. Similarly for the aws sdk jars or
+seas-sso property files or mssql database driver jar or sapjco native library.
+
+ibm
+ b2bi
+  customization
+   thirdparty
+    jars
+     seas-sso
+      1.0
+       seas-sso-1.0.jar
+     awssdk
+      1.12.779
+       aws-java-sdk-1.12.779.jar
+    dbjars
+     mssql
+      21.0
+       sqljdbc4.jar
+    properties
+     seas-sso
+      1.0
+       seas-sso.properties
+       seas-auth.properties
+    shared
+     sap
+      3.2
+       sap-jco.so

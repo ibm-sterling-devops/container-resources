@@ -1,0 +1,18 @@
+Custom Properties
+
+The customization init image can be used to configure override files and adding new/updating existing product property files. The out of the box customization init image defines the below structure for custom properties with placeholder files for customer_overrides.properties and system_overrides.properties which can then be updated by extending the image
+
+ibm
+ b2bi
+  customization
+   properties
+    customer_overrides.properties
+    system_overrides.properties
+
+Product configurations supported by the customer overrides or system overrides framework can be added to the overrides property files following the standard nomenclature as below
+<file-prefix>.<property-name>=<property-value>
+
+Apart from the above overrides files, any product configuration or property file with or without the
+'.in' extension can be updated with custom values and placed in the properties folder. Also new properties files that need to be added to the <install-dir>/properties location can be placed in the properties folder. At runtime these property files(s) will be copied over and replaced in the <install-dir>/property folder. This provides a better alternative to the current property customization option by placing the property files (*.in) under the <helm-chart>/config folder.
+
+If the Property file is specific to asi or ac or api, then the property file name should be prefixed with "asi-" "ac-" "api-" respectively.

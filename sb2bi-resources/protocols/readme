@@ -1,0 +1,19 @@
+Custom SFG Protocols
+
+The customization init image can be used to configure custom SFG protocol files. The out of the box
+customization init image defines the below structure for custom protocols with reference files for
+AFTExtensions.xml and AFTExtensions.properties and placeholder files AFTExtensionsCustomer.xml and
+AFTExtensionsCustomer.properties for defining custom protocols which can be updated by extending the
+image
+
+ibm
+ b2bi
+  customization
+   protocols
+    AFTExtensions.xml
+    AFTExtensions.properties
+    AFTExtensionsCustomer.xml
+    AFTExtensionsCustomer.properties
+
+The AFTExtensions.xml and AFTExtensions.properties are only for reference and not be edited. They can be
+used as a guide to add the custom protocol entries to AFTExtensionsCustomer.xml and AFTExtensionsCustomer.properties.

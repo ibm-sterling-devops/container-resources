@@ -1,0 +1,10 @@
+Custom Liberty Extensions
+
+The customization init image can be used to configure custom liberty extensions including jvm.options and server-overrides.xml. The out of the box customization init image defines the below structure for liberty extensions with placeholder files which can then be updated by extending the image
+
+ibm
+ b2bi
+  customization
+   liberty
+    jvm.options
+    server-overrides.xml

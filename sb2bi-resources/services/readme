@@ -1,0 +1,17 @@
+Custom Services
+
+The customization init image can be used to configure custom services. The out of the box customization init image defines the below structure for placing custom service jars by extending the image
+
+ibm
+ b2bi
+  customization
+   services
+
+All the custom service jars need to be copied to this location from where they will be automatically picked up by the db setup job and application containers.
+
+ibm
+ b2bi
+  customization
+   services
+    sample-service1.jar
+    sample-service2.jar

@@ -1,0 +1,13 @@
+<AFTExtensions>
+
+<!-- Custom File System Adapter Protocol-->
+<AFTExtension name="fsa-protocol" type="consumer-delivery-protocol"
+      label="fsa.protocol.label.protocol" bp="Custom_BP_RouteViaFileSystem">
+
+  <GROUP title="fsa.instance.group1.title">
+    <VARDEF varname="fsa_RemoteFileSystem" type="String" htmlType="text"
+        validator="ALPHANUMERIC" size="50" maxsize="250" label="fsa.label.protocol.remotefilesystem" required="yes"/>
+  </GROUP>
+</AFTExtension>
+   
+</AFTExtensions>

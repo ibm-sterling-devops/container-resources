@@ -1,0 +1,45 @@
+Custom UI Branding
+
+The customization init image can be used to apply custom UI branding for the supported web interfaces including dashboard, mailbox, filegateway, myfilegateway and myfg20. The out of the box customization init image defines the below structure for custom UI branding with placeholder folders for each
+supported war file along with placeholder files for branding artifacts which can then be updated by extending the image
+
+ibm
+ b2bi
+  customization
+   uibranding
+    dashboard
+     dashboard_logo.gif
+     dashboard_login.gif
+     dashboard_bkground.gif
+     dashboard_topbar_sub_integrator.gif
+     dashboard_splash.zip
+     skins.properties_style_ext
+    mailbox
+     mailbox_bkground.gif
+     mailbox_topbar_sub_integrator.gif
+     mailbox_logo.gif
+     mailbox_login.gif
+    filegateway
+     FileGateway_001.zip
+    myfilegateway
+     myFileGateway_001.zip
+    myfg20
+     myfg20.zip
+    apply-branding.properties
+
+The customization init image can be used to apply branding changes for these supported war files
+1. Dashboard
+2. Mailbox
+3. Filegateway
+4. Myfilegateway
+5. MyFG20
+
+The out of the box customization init image comes bundled with the default branding artifacts for each of the above war files. In case branding artifacts are updated for any of the war files then the corresponding flag for the war also needs to be enabled in apply-branding.properties. For example, if the branding artifacts for dashboard are updated then toggle  the flag for dashboard in apply-branding.properties to true as below
+cat apply-branding.properties
+ dashboard=true
+ mailbox=false
+ filegateway=false
+ myfilegateway=false
+ myfg20=false
+
+For details on updating the branding artifacts for each of the supported war files, the respective produc documentation can be referred.

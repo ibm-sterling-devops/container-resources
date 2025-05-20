@@ -1,0 +1,22 @@
+Custom Startup Extensions
+
+The customization init image can be used to configure custom startup extensions. The out of the box customization init image defines the below structure for custom startup extension with placeholder scripts which can then be updated by extending the image
+
+ibm
+ b2bi
+  customization
+   startup
+    pre-container-startup-extn.sh
+    pre-app-startup-extn.sh
+    post-app-startup-extn.sh
+
+The startup extension scripts are plugged in at specific lifecyle hooks during application container startup and can be used to execute any custom commands inheriting the same security environment context of the enclosing application containers
+1. pre-container-startup-extn.sh (Pre container startup) - This is executed as the first script during application container startup before any application logic or scripts are executed.
+2. pre-app-startup-extn.sh (Pre application startup) - This is executed before the application startup or runtime script - run.sh/startContainer.sh/startLiberty.sh - dependending on the type of container.
+3. post-app-startup-extn.sh (Post application startup) - This is executed post the application startup script or runtime script - run.sh/startContainer.sh/startLiberty.sh - dependending on the type of container.
+
+The scripts inherit few global environment variables from the main container entrypoint script including
+
+INSTALL_DIR - The application install directory. It can be used to access install subfolders like bin or properties viz. $INSTALL_DIR/bin or $INSTALL_DIR/properties
+
+SERVER_TYPE - Indicates the server type based on the container - 'asi', 'ac' or 'api'. It can be used to execute scripts or commands for specific server types.

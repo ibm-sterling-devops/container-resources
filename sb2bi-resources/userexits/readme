@@ -1,0 +1,33 @@
+Custom User Exits
+
+The customization init image can be used to configure custom user exits in the application. The out of the box customization init image defines the below structure for custom user exits with folders to place the user exit xmls and jars separately which can then be updated by extending the image
+
+ibm
+ b2bi
+  customization
+   userexits
+    xmls
+     UserLoginUserExits.xml
+     UserLogoutUserExits.xml
+     MailboxUserExits.xml
+     SftpServerUserExits.xml
+     FtpServerUserExits.xml
+    jars
+
+The out of the box image comes bundled with all the supported default user exit xmls, namely
+1. UserLoginUserExits.xml
+2. UserLogoutUserExits.xml
+3. MailboxUserExits.xml
+4. SftpServerUserExits.xml
+5. FtpServerUserExits.xml
+
+To apply custom user exits, the appropriate user exit xml definition needs to be updated with the user exit implementations and properties. The custom user exit code can be packaged in a jar which then needs to be enclosed in a vendor name and version folder structure, similar to thirdparty jars, and placed inside the jars folder under user exits. As an example, the user exit implementaton for logout can be packaged in user-logout-1.0.jar and placed in the below folder structure
+
+ibm
+ b2bi
+  customization
+   userexits
+    jars
+     user-logout
+      1.0
+       user-logout-1.0.jar
