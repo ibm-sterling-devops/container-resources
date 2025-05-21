@@ -20,3 +20,6 @@ The scripts inherit few global environment variables from the main container ent
 INSTALL_DIR - The application install directory. It can be used to access install subfolders like bin or properties viz. $INSTALL_DIR/bin or $INSTALL_DIR/properties
 
 SERVER_TYPE - Indicates the server type based on the container - 'asi', 'ac' or 'api'. It can be used to execute scripts or commands for specific server types.
+
+
+/ibm/b2bi/install/tp_import/import.sh -input /ibm/customization/startup/Export_SFGCommunity.xml -passphrase passw0rd -update -report /tmp/input-report.txt -errors /tmp/input-error.txt

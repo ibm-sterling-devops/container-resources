@@ -2,7 +2,7 @@
     <sequence>
 	
         <operation name="File System Adapter">
-            <participant name="Generic_FSA_Adapter"/>
+            <participant name="AS2Extract"/>
                 <output message="FileSystemInputMessage">
                     <assign to="extractionFolder" from="fsa_RemoteFileSystem/text()"/>
                     <assign to="assignFilename">true</assign>

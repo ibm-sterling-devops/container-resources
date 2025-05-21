@@ -2,6 +2,7 @@
 sb2bi-resources/files/dbdrivers/db2/db2jcc4.jar
 sb2bi-resources/files/dbdrivers/mssql/mssql-jdbc-12.6.2.jre8.jar
 sb2bi-resources/files/dbdrivers/oracle/ojdbc8-19.23.0.0.jar
-sb2bi-resources/files/awssdk/*.jar
-sb2bi-resources/files/awssdk/dynamicclasspath.cfg.in
+sb2bi-resources/thirdparty/jars/awssdk/*
+sb2bi-resources/thirdparty/pre-dynamicclasspath.cfg.in
+sb2bi-resources/thirdparty/pre-dynamicclasspathAC.cfg
 inspect.json
